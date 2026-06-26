@@ -9,26 +9,29 @@ export function HeroSection() {
       id="about"
       className="relative flex flex-col h-[100dvh] min-h-0 overflow-hidden"
     >
-      {/* Фоновое изображение */}
+      <Image
+        src="/images/hero-mobile.jpeg"
+        alt=""
+        fill
+        priority
+        className="object-cover object-top lg:hidden"
+        sizes="100vw"
+      />
       <Image
         src="/images/hero21-9.png"
         alt=""
         fill
         priority
-        className="object-cover object-top"
+        className="hidden lg:block object-cover object-top"
         sizes="100vw"
       />
 
-      {/* Маска с размытием */}
       <div
-        className="absolute inset-0 z-[5] backdrop-blur-3xl [mask-image:linear-gradient(to_right,white_0%,white_10%,transparent_70%,transparent_100%)]"
+        className="absolute inset-0 z-[5] bg-gradient-to-t from-bg-primary/95 via-bg-primary/50 to-transparent lg:bg-none lg:backdrop-blur-3xl lg:[mask-image:linear-gradient(to_right,white_0%,white_10%,transparent_70%,transparent_100%)]"
         aria-hidden="true"
       />
 
-      {/* Контейнер для контента. Используем flex-col и justify-center для идеального центрирования по вертикали */}
-      <Container className="relative z-10 flex flex-col justify-center w-full h-full">
-        
-        {/* Убрали pt-16, чтобы ничего не смещало блок вниз от математического центра */}
+      <Container className="relative z-10 flex flex-col justify-end lg:justify-center w-full h-full pb-8 lg:pb-0">
         <div className="flex flex-col gap-4 lg:gap-5 max-w-xl">
           <div className="flex items-center gap-3">
             <span className="text-gold text-[10px] font-semibold tracking-[0.2em] uppercase">
@@ -57,7 +60,6 @@ export function HeroSection() {
             </Button>
           </div>
         </div>
-        
       </Container>
     </section>
   );

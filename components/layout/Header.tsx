@@ -50,16 +50,16 @@ export function Header() {
               e.preventDefault();
               handleNavClick("#about");
             }}
-            className="flex items-center gap-3 shrink-0"
+            className="flex items-center gap-2 sm:gap-3 shrink min-w-0"
           >
-            <span className="flex items-center justify-center w-9 h-9 border border-gold text-gold font-serif text-lg">
+            <span className="flex items-center justify-center w-9 h-9 shrink-0 border border-gold text-gold font-serif text-lg">
               П
             </span>
-            <span className="hidden sm:flex flex-col leading-tight">
-              <span className="text-sm font-semibold tracking-wide text-text-primary">
+            <span className="flex flex-col leading-tight min-w-0">
+              <span className="text-xs sm:text-sm font-semibold tracking-wide text-text-primary truncate">
                 {siteConfig.logoMain}
               </span>
-              <span className="text-[10px] text-text-muted tracking-wider uppercase">
+              <span className="text-[9px] sm:text-[10px] text-text-muted tracking-wider uppercase truncate">
                 {siteConfig.logoSub}
               </span>
             </span>
@@ -102,7 +102,7 @@ export function Header() {
 
           <button
             type="button"
-            className="lg:hidden p-2 text-gold"
+            className="lg:hidden p-2 text-gold shrink-0"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Закрыть меню" : "Открыть меню"}
             aria-expanded={mobileOpen}
