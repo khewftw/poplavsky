@@ -13,6 +13,10 @@ import {
   Shield,
   Target,
   Users,
+  Video,
+  Zap,
+  Map,
+  Compass,
   type LucideIcon,
 } from "lucide-react";
 
@@ -32,6 +36,10 @@ const iconMap: Record<string, LucideIcon> = {
   FileWarning,
   FileText,
   Handshake,
+  Video,
+  Zap,
+  Map,
+  Compass,
 };
 
 export function getIcon(name: string): LucideIcon {

@@ -7,7 +7,7 @@ export function HeroSection() {
   return (
     <section
       id="about"
-      className="relative flex flex-col h-[100dvh] min-h-0 overflow-hidden"
+      className="relative flex flex-col min-h-[70vh] lg:min-h-[75vh] justify-center py-16 lg:py-20 overflow-hidden border-b border-border-gold"
     >
       <Image
         src="/images/hero-mobile.jpeg"
@@ -31,7 +31,7 @@ export function HeroSection() {
         aria-hidden="true"
       />
 
-      <Container className="relative z-10 flex flex-col justify-end lg:justify-center w-full h-full pb-8 lg:pb-0">
+      <Container className="relative z-10 flex flex-col justify-center w-full my-auto">
         <div className="flex flex-col gap-4 lg:gap-5 max-w-xl">
           <div className="flex items-center gap-3">
             <span className="text-gold text-[10px] font-semibold tracking-[0.2em] uppercase">

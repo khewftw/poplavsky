@@ -2,19 +2,15 @@
 
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { navLinks, siteConfig } from "@/lib/content";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 
-function scrollToHash(href: string) {
-  const id = href.replace("#", "");
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
-}
-
 export function Header() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -31,9 +27,19 @@ export function Header() {
     };
   }, [mobileOpen]);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     setMobileOpen(false);
-    scrollToHash(href);
+
+    if (href.startsWith("/#") || href.startsWith("#")) {
+      const hash = href.includes("#") ? href.split("#")[1] : href.replace("#", "");
+      if (pathname === "/") {
+        e.preventDefault();
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }
   };
 
   return (
@@ -44,17 +50,25 @@ export function Header() {
     >
       <Container>
         <div className="flex items-center justify-between h-16 lg:h-20 gap-4">
-          <a
-            href="#about"
+          <Link
+            href="/"
             onClick={(e) => {
-              e.preventDefault();
-              handleNavClick("#about");
+              if (pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
             }}
             className="flex items-center gap-2 sm:gap-3 shrink min-w-0"
           >
-            <span className="flex items-center justify-center w-9 h-9 shrink-0 border border-gold text-gold font-serif text-lg">
-              П
-            </span>
+            <Image
+              src="/logo.svg"
+              alt="ПОПЛАВСКИЙ"
+              width={36}
+              height={36}
+              className="shrink-0 object-contain"
+              priority
+            />
+            <div className="w-[1px] h-7 bg-border-gold shrink-0" />
             <span className="flex flex-col leading-tight min-w-0">
               <span className="text-xs sm:text-sm font-semibold tracking-wide text-text-primary truncate">
                 {siteConfig.logoMain}
@@ -63,21 +77,18 @@ export function Header() {
                 {siteConfig.logoSub}
               </span>
             </span>
-          </a>
+          </Link>
 
           <nav className="hidden lg:flex items-center gap-8" aria-label="Основная навигация">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(link.href);
-                }}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-xs text-text-muted hover:text-gold transition-colors tracking-wide uppercase"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -93,7 +104,7 @@ export function Header() {
             </div>
             <Button
               variant="outline"
-              onClick={() => handleNavClick("#contacts")}
+              href="/contacts"
               className="whitespace-nowrap"
             >
               {siteConfig.ctaConsultation}
@@ -117,17 +128,14 @@ export function Header() {
           <Container className="py-8 flex flex-col gap-8">
             <nav className="flex flex-col gap-4" aria-label="Мобильная навигация">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(link.href);
-                  }}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="text-lg text-text-primary hover:text-gold transition-colors py-2 border-b border-border-subtle"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
             <div className="flex flex-col gap-2">
@@ -141,8 +149,9 @@ export function Header() {
             </div>
             <Button
               variant="outline"
-              onClick={() => handleNavClick("#contacts")}
+              href="/contacts"
               className="w-full"
+              onClick={() => setMobileOpen(false)}
             >
               {siteConfig.ctaConsultation}
             </Button>

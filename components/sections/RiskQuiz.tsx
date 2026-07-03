@@ -27,8 +27,8 @@ interface RiskQuizProps {
 export function RiskQuiz({ compact = false, hideTitle = false }: RiskQuizProps) {
   const [phase, setPhase] = useState<QuizPhase>("q1");
   const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [form, setForm] = useState({ name: "", phone: "" });
-  const [errors, setErrors] = useState<Partial<Record<"name" | "phone", string>>>({});
+  const [form, setForm] = useState({ name: "", phone: "", consent: false });
+  const [errors, setErrors] = useState<Partial<Record<"name" | "phone" | "consent", string>>>({});
   const [result, setResult] = useState<QuizResult | null>(null);
 
   const currentQuestionIndex = phaseToQuestionIndex[phase] ?? -1;
@@ -62,13 +62,16 @@ export function RiskQuiz({ compact = false, hideTitle = false }: RiskQuizProps) 
   );
 
   const validateForm = () => {
-    const newErrors: Partial<Record<"name" | "phone", string>> = {};
+    const newErrors: Partial<Record<"name" | "phone" | "consent", string>> = {};
     if (form.name.trim().length < 2) {
       newErrors.name = "Введите имя";
     }
     const phoneClean = form.phone.replace(/\D/g, "");
     if (phoneClean.length < 10) {
       newErrors.phone = "Введите корректный телефон или Telegram";
+    }
+    if (!form.consent) {
+      newErrors.consent = "Для отправки заявки необходимо дать согласие на обработку персональных данных.";
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -192,6 +195,27 @@ export function RiskQuiz({ compact = false, hideTitle = false }: RiskQuizProps) 
               {errors.phone && (
                 <p className="text-xs text-red-400 -mt-2">{errors.phone}</p>
               )}
+              <div className="mt-1 mb-2 text-left">
+                <label className="flex items-start gap-2.5 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={form.consent}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, consent: e.target.checked }))
+                    }
+                    className="accent-gold mt-0.5 shrink-0 w-3.5 h-3.5"
+                  />
+                  <span className="text-[10px] text-text-muted leading-relaxed">
+                    Я даю согласие на обработку моих персональных данных в соответствии с{" "}
+                    <a href="/consent" className="text-gold hover:underline">Согласием на обработку персональных данных</a>{" "}
+                    и подтверждаю, что ознакомлен с{" "}
+                    <a href="/privacy" className="text-gold hover:underline">Политикой обработки персональных данных</a>.
+                  </span>
+                </label>
+                {errors.consent && (
+                  <p className="text-[10px] text-red-400 mt-1">{errors.consent}</p>
+                )}
+              </div>
               <Button type="submit" className="w-full text-[10px] py-2.5">
                 {quizSection.formCta}
               </Button>

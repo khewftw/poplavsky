@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   founderContent,
   processSection,
@@ -36,18 +37,20 @@ export function ServicesAboutBento() {
                   <p className="text-xs text-text-muted leading-relaxed flex-1">
                     {card.description}
                   </p>
-                  <a
-                    href="#contacts"
+                  <Link
+                    href={`/services#${card.id}`}
                     className="text-[10px] text-gold tracking-wider uppercase hover:text-gold-hover transition-colors"
                   >
                     Подробнее →
-                  </a>
+                  </Link>
                 </BentoCell>
               );
             })}
           </BentoGrid>
 
-          <BlockTitle className="mt-6 lg:mt-8">{processSection.title}</BlockTitle>
+          <div id="approach" className="scroll-mt-24">
+            <BlockTitle className="mt-6 lg:mt-8">{processSection.title}</BlockTitle>
+          </div>
 
           <BentoGrid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step) => (
