@@ -1,22 +1,20 @@
 import { practicalSituationsSection } from "@/lib/content";
-import { BlockTitle } from "@/components/ui/BlockTitle";
-import { BentoCell } from "@/components/ui/BentoCell";
-import { BentoGrid } from "@/components/ui/BentoGrid";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Section } from "@/components/ui/Section";
 
 export function PracticalSituations() {
   return (
     <Section id="practical-situations" borderTop>
-      <BlockTitle className="mb-2">{practicalSituationsSection.title}</BlockTitle>
-      <p className="text-xs sm:text-sm text-text-muted mb-8 max-w-3xl leading-relaxed">
+      <SectionHeading title={practicalSituationsSection.title} overline="ПРАКТИКА" showUnderline />
+      <p className="text-xs sm:text-sm text-text-muted mb-8 -mt-2 max-w-3xl leading-relaxed">
         {practicalSituationsSection.subtitle}
       </p>
       
-      <BentoGrid className="grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {practicalSituationsSection.situations.map((sit, idx) => (
-          <BentoCell
+          <div
             key={idx}
-            className="flex flex-col p-6 bg-bg-cell border border-border-gold rounded-sm hover:border-gold transition-colors"
+            className="flex flex-col p-6 bg-bg-cell border border-border-gold rounded-sm hover:border-gold transition-colors duration-300"
           >
             <h3 className="font-serif text-sm sm:text-base text-gold mb-5 border-b border-border-subtle pb-3">
               {sit.title}
@@ -43,9 +41,9 @@ export function PracticalSituations() {
                 <p className="text-xs text-text-primary leading-relaxed font-medium">{sit.result}</p>
               </div>
             </div>
-          </BentoCell>
+          </div>
         ))}
-      </BentoGrid>
+      </div>
     </Section>
   );
 }

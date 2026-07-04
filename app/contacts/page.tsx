@@ -267,7 +267,7 @@ export default function ContactsPage() {
                 <Briefcase className="text-gold mt-1 shrink-0" size={20} strokeWidth={1.5} />
                 <div>
                   <h4 className="text-[10px] text-text-muted uppercase tracking-wider mb-2">Форматы работы</h4>
-                  <ul className="flex flex-col gap-1 text-[11px] text-text-muted">
+                  <ul className="flex flex-col gap-1 text-[11px] text-text-muted list-none">
                     <li className="flex items-center gap-2"><span className="text-gold">•</span> Онлайн-консультация</li>
                     <li className="flex items-center gap-2"><span className="text-gold">•</span> Очная встреча в Москве</li>
                     <li className="flex items-center gap-2"><span className="text-gold">•</span> Срочная консультация</li>

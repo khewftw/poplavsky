@@ -1,5 +1,5 @@
 import { strategyVsReactionSection } from "@/lib/content";
-import { BlockTitle } from "@/components/ui/BlockTitle";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BentoCell } from "@/components/ui/BentoCell";
 import { BentoGrid } from "@/components/ui/BentoGrid";
 import { Section } from "@/components/ui/Section";
@@ -7,8 +7,8 @@ import { Section } from "@/components/ui/Section";
 export function StrategyVsReaction() {
   return (
     <Section id="strategy-vs-reaction" borderTop>
-      <BlockTitle className="mb-2">{strategyVsReactionSection.title}</BlockTitle>
-      <p className="text-xs sm:text-sm text-text-muted mb-6 max-w-3xl leading-relaxed">
+      <SectionHeading title={strategyVsReactionSection.title} overline="ПОДХОД" showUnderline />
+      <p className="text-xs sm:text-sm text-text-muted mb-6 -mt-2 max-w-3xl leading-relaxed">
         {strategyVsReactionSection.subtitle}
       </p>
       <BentoGrid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">

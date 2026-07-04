@@ -169,7 +169,7 @@ export default function DocumentsPage() {
                 <p className="text-xs text-text-muted leading-relaxed mb-4">
                   Оплата производится после согласования формата, стоимости и объёма услуги. Возможные способы оплаты указываются при записи на консультацию или в счёте на оплату.
                 </p>
-                <ul className="flex flex-col gap-1.5 text-xs text-text-muted mb-4">
+                <ul className="flex flex-col gap-1.5 text-xs text-text-muted mb-4 list-none">
                   <li className="flex items-start gap-2"><span className="text-gold">•</span> онлайн-консультация оплачивается до её проведения;</li>
                   <li className="flex items-start gap-2"><span className="text-gold">•</span> очная консультация оплачивается до встречи, если иное не согласовано;</li>
                   <li className="flex items-start gap-2"><span className="text-gold">•</span> срочная консультация оплачивается по повышенному тарифу;</li>
@@ -188,7 +188,7 @@ export default function DocumentsPage() {
                 <p className="text-xs text-text-muted leading-relaxed mb-4">
                   Условия переноса, отмены консультации и возврата денежных средств зависят от формата услуги, времени отмены, объёма уже выполненной работы и фактически понесённых расходов.
                 </p>
-                <ul className="flex flex-col gap-1.5 text-xs text-text-muted mb-4">
+                <ul className="flex flex-col gap-1.5 text-xs text-text-muted mb-4 list-none">
                   <li className="flex items-start gap-2"><span className="text-gold">•</span> консультация может быть перенесена по согласованию сторон;</li>
                   <li className="flex items-start gap-2"><span className="text-gold">•</span> если услуга уже оказана, её стоимость возврату не подлежит;</li>
                   <li className="flex items-start gap-2"><span className="text-gold">•</span> если до консультации был выполнен анализ документов, стоимость фактически выполненной части может быть удержана.</li>
