@@ -134,7 +134,7 @@ export default function AboutPage() {
             </div>
 
             {/* COLUMN 2: FOUNDER PORTRAIT */}
-            <div className="relative border-b lg:border-b-0 lg:border-r border-border-gold min-h-[350px] lg:min-h-0">
+            <div className="relative border-b lg:border-b-0 lg:border-r border-border-gold min-h-[350px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-0">
               <Image
                 src="/images/founder.jpeg"
                 alt="Валентин Поплавский"

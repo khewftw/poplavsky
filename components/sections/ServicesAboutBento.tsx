@@ -86,7 +86,7 @@ export function ServicesAboutBento() {
 
         {/* RIGHT COLUMN: FOUNDER (ABOUT BUREAU) */}
         <div className="flex flex-col min-h-full bg-bg-surface" id="about-bureau">
-          <div className="relative flex-1 min-h-[350px] lg:min-h-0">
+          <div className="relative flex-1 min-h-[350px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-0">
             <Image
               src="/images/founder.jpeg"
               alt="Валентин Поплавский"
