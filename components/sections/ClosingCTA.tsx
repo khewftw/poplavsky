@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { closingContent } from "@/lib/content";
 import { BentoCell } from "@/components/ui/BentoCell";
 import { Button } from "@/components/ui/Button";
@@ -43,31 +44,44 @@ export function ClosingCTA() {
   return (
     <Section id="contacts" borderTop>
       <div className="border border-border-gold">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          <BentoCell className="border-b lg:border-b-0 lg:border-r border-border-gold">
-            <SectionHeading
-              title={closingContent.headline}
-              showUnderline
-              className="mb-4"
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-stretch">
+          
+          {/* LEFT: PREMIUM CONTEXT IMAGE */}
+          <div className="relative min-h-[300px] sm:min-h-[350px] lg:min-h-0 border-b lg:border-b-0 lg:border-r border-border-gold">
+            <Image
+              src="/images/closing_cta_bg.png"
+              alt="Юридическое бюро"
+              fill
+              className="object-cover object-center brightness-75"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <h3 className="font-sans text-xs font-semibold tracking-[0.15em] uppercase text-text-primary lg:text-sm">
-              {closingContent.title}
-            </h3>
-            <p className="mt-3 text-xs text-text-muted leading-relaxed">
-              {closingContent.subtitle}
-            </p>
-            <p className="mt-3 text-xs text-text-muted leading-relaxed">
-              {closingContent.copy}
-            </p>
-          </BentoCell>
+          </div>
 
-          <BentoCell>
+          {/* RIGHT: TEXT & FORM */}
+          <BentoCell className="flex flex-col justify-center p-6 lg:p-10">
+            <div className="mb-6">
+              <SectionHeading
+                title={closingContent.headline}
+                showUnderline
+                className="mb-4"
+              />
+              <h3 className="font-sans text-xs font-semibold tracking-[0.15em] uppercase text-text-primary lg:text-sm">
+                {closingContent.title}
+              </h3>
+              <p className="mt-3 text-xs text-text-muted leading-relaxed">
+                {closingContent.subtitle}
+              </p>
+              <p className="mt-3 text-xs text-text-muted leading-relaxed">
+                {closingContent.copy}
+              </p>
+            </div>
+
             {submitted ? (
-              <div className="py-2">
-                <h3 className="font-serif text-lg text-text-primary">
+              <div className="py-6 border border-border-gold bg-bg-primary/40 p-6 rounded-sm">
+                <h3 className="font-serif text-base text-gold mb-2">
                   {closingContent.form.successTitle}
                 </h3>
-                <p className="mt-2 text-text-muted text-xs">
+                <p className="text-text-muted text-xs leading-relaxed">
                   {closingContent.form.successDescription}
                 </p>
               </div>
