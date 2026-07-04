@@ -25,23 +25,18 @@ export function WhenToAppeal() {
             
             <div className="flex-1 flex flex-col gap-4">
               <div className="space-y-1">
-                <span className="text-[9px] text-text-muted uppercase tracking-wider block font-semibold">Чем поможем</span>
-                <p className="text-xs text-text-primary leading-relaxed">{card.help}</p>
+                <span className="text-[9px] text-red-400/90 uppercase tracking-wider block font-semibold">Риск</span>
+                <p className="text-xs text-text-muted leading-relaxed">{card.risk}</p>
               </div>
               
               <div className="space-y-1">
-                <span className="text-[9px] text-gold uppercase tracking-wider block font-semibold">Гарантии процесса</span>
-                <p className="text-xs text-text-muted leading-relaxed">{card.guarantees}</p>
-              </div>
-
-              <div className="space-y-1">
-                <span className="text-[9px] text-red-400/90 uppercase tracking-wider block font-semibold">Как работают другие бюро</span>
-                <p className="text-xs text-text-muted/80 leading-relaxed italic">{card.others}</p>
+                <span className="text-[9px] text-gold uppercase tracking-wider block font-semibold">Что можно сделать</span>
+                <p className="text-xs text-text-primary leading-relaxed">{card.action}</p>
               </div>
               
               <div className="space-y-1 border-t border-border-subtle pt-3 mt-2">
-                <span className="text-[9px] text-green-400 uppercase tracking-wider block font-semibold">Плюсы реагирования сейчас</span>
-                <p className="text-xs text-text-primary leading-relaxed font-medium">{card.pluses}</p>
+                <span className="text-[9px] text-green-400 uppercase tracking-wider block font-semibold">Что получает клиент</span>
+                <p className="text-xs text-text-primary leading-relaxed font-medium">{card.result}</p>
               </div>
             </div>
           </div>
