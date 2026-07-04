@@ -38,7 +38,7 @@ export function LegalLayout({ title, updatedAt = "02 июля 2026 г.", childre
 
         <section className="py-12 md:py-16">
           <Container>
-            <div className="max-w-4xl mx-auto bg-bg-cell/50 border border-border-subtle p-6 md:p-12 text-xs sm:text-sm text-text-muted leading-relaxed select-text space-y-6">
+            <div className="max-w-4xl mx-auto bg-bg-cell/50 border border-border-subtle p-6 md:p-12 text-xs sm:text-sm text-text-muted leading-relaxed select-text space-y-6 text-justify">
               {children}
             </div>
           </Container>

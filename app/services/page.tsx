@@ -151,7 +151,7 @@ export default function ServicesPage() {
                       <h4 className="flex items-center gap-2 text-xs font-semibold text-gold uppercase tracking-wider mb-3">
                         <HelpCircle size={14} className="text-gold" /> Когда подходит
                       </h4>
-                      <ul className="flex flex-col gap-2">
+                      <ul className="flex flex-col gap-2 list-none">
                         {service.whenFits.map((item, idx) => (
                           <li key={idx} className="flex items-start gap-2.5 text-xs text-text-muted leading-relaxed">
                             <span className="text-gold mt-1 select-none">•</span>
@@ -165,7 +165,7 @@ export default function ServicesPage() {
                       <h4 className="flex items-center gap-2 text-xs font-semibold text-gold uppercase tracking-wider mb-3">
                         <FileText size={14} className="text-gold" /> Что входит в работу
                       </h4>
-                      <ul className="flex flex-col gap-2">
+                      <ul className="flex flex-col gap-2 list-none">
                         {service.whatIncluded.map((item, idx) => (
                           <li key={idx} className="flex items-start gap-2.5 text-xs text-text-muted leading-relaxed">
                             <span className="text-gold mt-1 select-none">•</span>

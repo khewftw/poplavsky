@@ -53,6 +53,14 @@ export function HeroSection() {
             {heroContent.subtitle}
           </p>
 
+          {/* @ts-ignore */}
+          {heroContent.additionalLine && (
+            <p className="text-text-muted text-xs leading-relaxed max-w-md border-l border-gold pl-4 mt-1">
+              {/* @ts-ignore */}
+              {heroContent.additionalLine}
+            </p>
+          )}
+
           <div className="flex flex-col sm:flex-row gap-3 pt-1">
             <Button href={heroContent.ctaPrimaryHref}>
               {heroContent.ctaPrimary}
@@ -61,6 +69,14 @@ export function HeroSection() {
               {heroContent.ctaSecondary}
             </Button>
           </div>
+
+          {/* @ts-ignore */}
+          {heroContent.signature && (
+            <p className="text-[10px] text-text-muted italic mt-1">
+              {/* @ts-ignore */}
+              {heroContent.signature}
+            </p>
+          )}
         </div>
       </Container>
     </section>

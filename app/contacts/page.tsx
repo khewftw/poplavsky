@@ -243,18 +243,24 @@ export default function ContactsPage() {
               </div>
 
               {/* Messengers card */}
-              <div className="border border-border-gold bg-bg-cell p-5 flex items-start gap-4">
-                <MessageSquare className="text-gold mt-1 shrink-0" size={20} strokeWidth={1.5} />
+              {/* @ts-ignore */}
+              <a
+                href={content.telegramHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-border-gold bg-bg-cell p-5 flex items-start gap-4 hover:border-gold transition-colors group cursor-pointer"
+              >
+                <MessageSquare className="text-gold mt-1 shrink-0 group-hover:scale-105 transition-transform" size={20} strokeWidth={1.5} />
                 <div>
                   <h4 className="text-[10px] text-text-muted uppercase tracking-wider mb-1">{content.telegramText}</h4>
-                  <p className="text-xs text-text-primary leading-normal font-medium">
-                    Связь по ссылке в мессенджерах
+                  <p className="text-xs text-text-primary leading-normal font-medium group-hover:text-gold transition-colors">
+                    Написать в Telegram
                   </p>
                   <p className="text-[10px] text-text-muted mt-1 leading-normal">
                     {content.telegramDesc}
                   </p>
                 </div>
-              </div>
+              </a>
 
               {/* Work Formats */}
               <div className="border border-border-gold bg-bg-cell p-5 flex items-start gap-4">
@@ -290,7 +296,7 @@ export default function ContactsPage() {
                     Заявка успешно отправлена
                   </h3>
                   <p className="text-xs text-text-muted leading-relaxed mb-6">
-                    {siteConfig.phone && "Спасибо. Ваша заявка отправлена. Мы свяжемся с вами по указанным контактам для уточнения деталей, формата консультации и порядка дальнейшей работы."}
+                    Спасибо. Ваша заявка отправлена. Мы свяжемся с вами по указанным контактам для уточнения деталей, формата консультации и порядка дальнейшей работы.
                   </p>
                   <Button onClick={() => setIsSubmitted(false)} className="text-xs py-2 px-5">
                     Отправить ещё одну заявку
