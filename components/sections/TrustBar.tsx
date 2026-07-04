@@ -9,7 +9,7 @@ interface TrustBarProps {
 
 function TrustBarGrid() {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
       {trustStats.map((stat, index) => {
         const Icon = getIcon(stat.iconName);
         return (
@@ -17,7 +17,7 @@ function TrustBarGrid() {
             {index > 0 && (
               <GoldDivider orientation="vertical" className="hidden lg:block" />
             )}
-            <div className="flex-1 flex items-start gap-2 lg:gap-3 py-3 lg:py-4 px-3 lg:px-5 border-b sm:border-b-0 border-border-subtle last:border-b-0">
+            <div className="flex-1 flex items-start gap-2 lg:gap-3 py-4 sm:py-3 lg:py-4 px-4 sm:px-3 lg:px-5 border-b sm:border-b sm:border-r border-border-subtle last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 sm:[&:nth-child(even)]:border-r-0 lg:border-b-0 lg:border-r-0">
               <Icon
                 className="shrink-0 text-gold mt-0.5"
                 size={18}
