@@ -33,7 +33,7 @@ export function HeroSection() {
       />
       {/* Desktop overlay: gradient to right */}
       <div
-        className="absolute inset-0 z-[5] hidden lg:block bg-gradient-to-r from-bg-primary via-bg-primary/85 to-transparent"
+        className="absolute inset-0 z-[5] hidden lg:block bg-[linear-gradient(to_right,#0D0D0D_0%,#0D0D0D_25%,transparent_50%,transparent_100%)]"
         aria-hidden="true"
       />
 
