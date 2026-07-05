@@ -18,10 +18,10 @@ export function ServicesAboutBento() {
   return (
     <Section id="services" borderTop>
       <div className="border border-border-gold grid grid-cols-1 lg:grid-cols-[1fr_380px] lg:items-stretch">
-        
+
         {/* LEFT COLUMN: DIRECTIONS & PROCESS */}
         <div className="border-b lg:border-b-0 lg:border-r border-border-gold p-6 lg:p-8 flex flex-col justify-between gap-10">
-          
+
           {/* PRACTICAL DIRECTIONS */}
           <div>
             <SectionHeading title={servicesSection.title} overline="НАПРАВЛЕНИЯ" showUnderline className="mb-6" />
@@ -88,7 +88,7 @@ export function ServicesAboutBento() {
         <div className="flex flex-col min-h-full bg-bg-surface" id="about-bureau">
           <div className="relative flex-1 min-h-[350px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-0">
             <Image
-              src="/images/founder.jpeg"
+              src="/images/founder1.jpeg"
               alt="Валентин Поплавский"
               fill
               className="object-cover object-top"

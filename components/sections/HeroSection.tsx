@@ -7,31 +7,37 @@ export function HeroSection() {
   return (
     <section
       id="about"
-      className="relative flex flex-col min-h-[70vh] lg:min-h-[75vh] justify-center py-16 lg:py-20 overflow-hidden border-b border-border-gold"
+      className="relative flex flex-col min-h-[calc(100dvh-64px)] lg:min-h-[60vh] justify-end lg:justify-center py-12 lg:py-20 overflow-hidden border-b border-border-gold"
     >
       <Image
-        src="/images/hero-mobile.jpeg"
-        alt=""
+        src="/images/hero-mobile1.jpeg"
+        alt="Валентин Поплавский"
         fill
         priority
         className="object-cover object-top lg:hidden"
         sizes="100vw"
       />
       <Image
-        src="/images/hero21-9.png"
-        alt=""
+        src="/images/hero.jpeg"
+        alt="Валентин Поплавский"
         fill
         priority
         className="hidden lg:block object-cover object-top"
         sizes="100vw"
       />
 
+      {/* Mobile overlay: gradient to top */}
       <div
-        className="absolute inset-0 z-[5] bg-gradient-to-t from-bg-primary/95 via-bg-primary/50 to-transparent lg:bg-none lg:backdrop-blur-3xl lg:[mask-image:linear-gradient(to_right,white_0%,white_10%,transparent_70%,transparent_100%)]"
+        className="absolute inset-0 z-[5] bg-gradient-to-t from-bg-primary via-bg-primary/95 via-50% to-transparent lg:hidden"
+        aria-hidden="true"
+      />
+      {/* Desktop overlay: gradient to right */}
+      <div
+        className="absolute inset-0 z-[5] hidden lg:block bg-gradient-to-r from-bg-primary via-bg-primary/85 to-transparent"
         aria-hidden="true"
       />
 
-      <Container className="relative z-10 flex flex-col justify-center w-full my-auto">
+      <Container className="relative z-10 flex flex-col justify-end lg:justify-center w-full mt-auto mb-0 lg:my-auto pb-10 lg:pb-0">
         <div className="flex flex-col gap-4 lg:gap-5 max-w-xl">
           <div className="flex items-center gap-3">
             <span className="text-gold text-[10px] font-semibold tracking-[0.2em] uppercase">
