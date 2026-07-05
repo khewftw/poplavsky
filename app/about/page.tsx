@@ -29,7 +29,7 @@ export default function AboutPage() {
     <>
       <Header />
       <main className="w-full bg-bg-primary text-text-primary flex-1">
-        
+
         {/* HERO SECTION */}
         <section className="relative min-h-[70vh] flex flex-col justify-center py-20 overflow-hidden border-b border-border-gold">
           <Image
@@ -116,7 +116,7 @@ export default function AboutPage() {
         {/* APPROACH */}
         <Section className="py-12 lg:py-16 border-t border-b border-border-gold bg-bg-surface">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr_1fr] border border-border-gold items-stretch">
-            
+
             {/* COLUMN 1: HEADING & BULLETS */}
             <div className="border-b lg:border-b-0 lg:border-r border-border-gold p-6 lg:p-8 flex flex-col justify-center">
               <BlockTitle className="mb-4">Подход в работе</BlockTitle>
@@ -136,7 +136,7 @@ export default function AboutPage() {
             {/* COLUMN 2: FOUNDER PORTRAIT */}
             <div className="relative border-b lg:border-b-0 lg:border-r border-border-gold min-h-[350px] sm:min-h-[400px] md:min-h-[480px] lg:min-h-0">
               <Image
-                src="/images/founder.jpeg"
+                src="/images/founder1.jpeg"
                 alt="Валентин Поплавский"
                 fill
                 className="object-cover object-top"
@@ -147,7 +147,7 @@ export default function AboutPage() {
             {/* COLUMN 3: QUOTE BLOCK */}
             <div className="p-6 lg:p-8 flex flex-col justify-between min-h-[300px] lg:min-h-0 bg-bg-cell">
               <Quote className="text-gold opacity-30 self-start" size={32} strokeWidth={1} />
-              
+
               <blockquote className="font-serif text-base lg:text-lg text-text-primary leading-relaxed my-6">
                 {content.approach.quote}
               </blockquote>
