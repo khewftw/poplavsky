@@ -7,16 +7,25 @@ export function HeroSection() {
   return (
     <section
       id="about"
-      className="relative flex flex-col min-h-[80dvh] lg:min-h-[60vh] justify-end lg:justify-center pt-16 pb-8 lg:py-20 overflow-hidden border-b border-border-gold"
+      className="relative flex flex-col lg:min-h-[60vh] lg:justify-center pb-8 lg:py-20 overflow-hidden border-b border-border-gold bg-bg-primary"
     >
-      <Image
-        src="/images/hero-mobile1.jpeg"
-        alt="Валентин Поплавский"
-        fill
-        priority
-        className="object-cover object-[65%_top] lg:hidden"
-        sizes="100vw"
-      />
+      {/* Mobile: image on top with fade into background */}
+      <div className="relative w-full h-[42dvh] min-h-[260px] max-h-[400px] lg:hidden shrink-0">
+        <Image
+          src="/images/hero-mobile1.jpeg"
+          alt="Валентин Поплавский"
+          fill
+          priority
+          className="object-cover object-[65%_18%]"
+          sizes="100vw"
+        />
+        <div
+          className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-b from-transparent via-bg-primary/70 to-bg-primary"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Desktop: full-bleed background image */}
       <Image
         src="/images/hero.jpeg"
         alt="Валентин Поплавский"
@@ -26,23 +35,13 @@ export function HeroSection() {
         sizes="100vw"
       />
 
-      {/* Mobile overlay: dark wash to reduce image contrast overall */}
-      <div
-        className="absolute inset-0 z-[4] bg-bg-primary/30 lg:hidden"
-        aria-hidden="true"
-      />
-      {/* Mobile overlay: gradient to top */}
-      <div
-        className="absolute inset-0 z-[5] bg-gradient-to-t from-bg-primary via-bg-primary/95 via-65% to-transparent lg:hidden"
-        aria-hidden="true"
-      />
       {/* Desktop overlay: gradient to right */}
       <div
         className="absolute inset-0 z-[5] hidden lg:block bg-[linear-gradient(to_right,var(--bg-primary)_0%,var(--bg-primary)_25%,transparent_50%,transparent_100%)]"
         aria-hidden="true"
       />
 
-      <Container className="relative z-10 flex flex-col justify-end lg:justify-center w-full mt-auto mb-0 lg:my-auto pb-0">
+      <Container className="relative z-10 flex flex-col justify-end lg:justify-center w-full lg:my-auto pt-6 lg:pt-0">
         <div className="flex flex-col gap-4 lg:gap-5 max-w-xl">
           <div className="flex items-center gap-3">
             <span className="text-gold text-[10px] font-semibold tracking-[0.2em] uppercase">
