@@ -1,0 +1,18 @@
+export const legalRequisites = {
+  fullName: "Поплавский Валентин Владиленович",
+  inn: "773510761650",
+  ogrnip: "315774600328712",
+  address: "124498, Россия, г. Москва, г. Зеленоград, д. 414, кв. 91",
+  email: "pir12@yandex.ru",
+  emailHref: "mailto:pir12@yandex.ru",
+  phone: "+7-968-554-000-3",
+  phoneHref: "tel:+79685540003",
+  telegramHref: "https://t.me/popl_pravo",
+  bankAccount: "40802810300009831973",
+  bankName: "АО «ТБанк»",
+  bankInn: "7710140679",
+  bik: "044525974",
+  correspondentAccount: "30101810145250000974",
+  bankDetailsFile: "/documents/rekvizity-scheta.docx",
+  bankDetailsFileName: "Реквизиты счета.docx",
+} as const;

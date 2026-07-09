@@ -106,15 +106,28 @@ export default function DocumentsPage() {
                   {doc.desc}
                 </p>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                  <Button href={doc.openHref} className="text-xs py-2 px-5 flex items-center gap-1 shrink-0">
-                    Открыть документ <ArrowRight size={12} />
-                  </Button>
-                  <span
-                    className="text-[10px] text-text-muted hover:text-gold uppercase tracking-wider font-semibold transition-colors flex items-center gap-1.5 py-2 cursor-not-allowed select-none"
-                    title="Файл будет доступен после публикации реквизитов"
-                  >
-                    <Download size={12} /> Скачать PDF
-                  </span>
+                  {"openHref" in doc && doc.openHref ? (
+                    <Button href={doc.openHref} className="text-xs py-2 px-5 flex items-center gap-1 shrink-0">
+                      Открыть документ <ArrowRight size={12} />
+                    </Button>
+                  ) : null}
+                  {"downloadHref" in doc && doc.downloadHref ? (
+                    <a
+                      href={doc.downloadHref}
+                      download
+                      className="text-[10px] text-gold hover:text-gold-hover uppercase tracking-wider font-semibold transition-colors flex items-center gap-1.5 py-2"
+                    >
+                      <Download size={12} /> {"downloadLabel" in doc ? doc.downloadLabel : "Скачать"}
+                    </a>
+                  ) : "pdfHref" in doc && doc.pdfHref ? (
+                    <a
+                      href={doc.pdfHref}
+                      download
+                      className="text-[10px] text-gold hover:text-gold-hover uppercase tracking-wider font-semibold transition-colors flex items-center gap-1.5 py-2"
+                    >
+                      <Download size={12} /> Скачать PDF
+                    </a>
+                  ) : null}
                 </div>
               </BentoCell>
             ))}
@@ -167,7 +180,7 @@ export default function DocumentsPage() {
                   <CreditCard size={14} /> Оплата услуг
                 </h4>
                 <p className="text-xs text-text-muted leading-relaxed mb-4">
-                  Оплата производится после согласования формата, стоимости и объёма услуги. Возможные способы оплаты указываются при записи на консультацию или в счёте на оплату.
+                  Оплата производится после согласования формата, стоимости и объёма услуги. Возможные способы оплаты указываются при записи на консультацию или в счёте на оплату. Банковские реквизиты для безналичной оплаты доступны для скачивания в разделе «Основные документы».
                 </p>
                 <ul className="flex flex-col gap-1.5 text-xs text-text-muted mb-4 list-none">
                   <li className="flex items-start gap-2"><span className="text-gold">•</span> онлайн-консультация оплачивается до её проведения;</li>

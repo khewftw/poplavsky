@@ -14,6 +14,9 @@ import type {
 export const siteConfig = {
   phone: "+7-968-554-000-3",
   phoneHref: "tel:+79685540003",
+  email: "pir12@yandex.ru",
+  emailHref: "mailto:pir12@yandex.ru",
+  telegramHref: "https://t.me/popl_pravo",
   location: "Москва · Онлайн · Выезд по России",
   logoMain: "ПОПЛАВСКИЙ",
   logoSub: "Юридическое бюро",
@@ -669,10 +672,10 @@ export const contactsPageContent = {
   ],
   phone: "+7-968-554-000-3",
   phoneHref: "tel:+79685540003",
-  email: "info@poplavsky-law.ru",
-  emailHref: "mailto:info@poplavsky-law.ru",
+  email: "pir12@yandex.ru",
+  emailHref: "mailto:pir12@yandex.ru",
   telegramText: "Telegram",
-  telegramHref: "https://t.me/v_poplavsky",
+  telegramHref: "https://t.me/popl_pravo",
   telegramDesc: "Удобный способ связи для быстрого обмена информацией и документами.",
   workingHours: "По предварительной записи",
   whenToAppeal: [
@@ -713,7 +716,8 @@ export const documentsPageContent = {
     { title: "Публичная оферта", desc: "Официальное предложение на оказание юридических услуг с условиями и порядком работы.", openHref: "/oferta", pdfHref: "/documents/oferta.pdf" },
     { title: "Политика обработки персональных данных", desc: "Правила сбора, хранения и обработки персональных данных в соответствии с законодательством РФ.", openHref: "/privacy", pdfHref: "/documents/privacy.pdf" },
     { title: "Согласие на обработку ПДн", desc: "Форма согласия на обработку ваших персональных данных для оказания юридических услуг.", openHref: "/consent", pdfHref: "/documents/consent.pdf" },
-    { title: "Порядок оплаты и возврата", desc: "Условия оплаты услуг, порядок возврата денежных средств и переноса консультаций.", openHref: "/payment-return", pdfHref: "/documents/payment-return.pdf" }
+    { title: "Порядок оплаты и возврата", desc: "Условия оплаты услуг, порядок возврата денежных средств и переноса консультаций.", openHref: "/payment-return", pdfHref: "/documents/payment-return.pdf" },
+    { title: "Реквизиты счёта", desc: "Банковские реквизиты для оплаты юридических услуг по безналичному расчёту.", downloadHref: "/documents/rekvizity-scheta.docx", downloadLabel: "Скачать DOCX" }
   ],
   rules: [
     { title: "Консультации по записи", desc: "Мы работаем по предварительной записи для вашего удобства." },

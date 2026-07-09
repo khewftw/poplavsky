@@ -1,5 +1,6 @@
 import { LegalLayout } from "@/components/layout/LegalLayout";
 import { Button } from "@/components/ui/Button";
+import { legalRequisites } from "@/lib/requisites";
 
 export const metadata = {
   title: "Порядок оплаты и возврата — ПОПЛАВСКИЙ. Юридическое бюро",
@@ -7,6 +8,8 @@ export const metadata = {
 };
 
 export default function PaymentReturnPage() {
+  const r = legalRequisites;
+
   return (
     <LegalLayout title="Порядок оплаты и возврата" updatedAt="02 июля 2026 г.">
       <p className="text-text-primary font-semibold">
@@ -206,8 +209,8 @@ export default function PaymentReturnPage() {
         <p><strong>В обращении желательно указать:</strong> имя клиента, дату оплаты, вид услуги, сумму оплаты, причину обращения, контактные данные для ответа, реквизиты для возврата, если возврат согласован.</p>
         <p><strong>Каналы связи:</strong></p>
         <ul className="list-disc pl-5 space-y-1">
-          <li>Телефон: +7-968-554-000-3</li>
-          <li>E-mail: info@poplavsky-law.ru</li>
+          <li>Телефон: {r.phone}</li>
+          <li>E-mail: {r.email}</li>
           <li>Форма обратной связи: <a href="/contacts" className="text-gold hover:text-gold-hover transition-colors">/contacts</a></li>
         </ul>
       </div>
